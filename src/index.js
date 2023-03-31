@@ -4,30 +4,16 @@ import App from "./components/App";
 //code here 
 
 
-// import React from 'react';
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+import reducers from "./reducers/index.js";
 
-// import ReactDOM from 'react-dom/client';
-
-// import App from './App';
-
-// import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-
-import { Provider } from 'react-redux';
-
-import store from './redux/store';
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-
-root.render(
-
-<Provider store={store}>
-
-<App />
-
-</Provider>
-
+ReactDOM.render(
+  <Provider store={createStore(reducers)}>
+    <App />
+  </Provider>,
+  document.getElementById("root")
 );
-
 
 
 
